@@ -30,6 +30,16 @@ DeepSeek/
 │       ├── fusion.py                 # 深度卷积融合层
 │       └── engram.py                 # 完整 Engram 模块
 │
+├── Zero-Infinity/             # ZeRO-Infinity 异构系统技术 (Engram 鼻祖)
+│   ├── README.md              # 模块概述
+│   └── Zero-Infinity.md       # 📝 完整学习笔记
+│       ├── 前置知识 (ZeRO系列/3D并行/硬件带宽)
+│       ├── Activation Checkpointing 详解
+│       ├── h→4h 最大算子分析
+│       ├── MSWM 瓶颈详解
+│       ├── 5大核心架构创新
+│       └── 与 Engram 深度对比
+│
 ├── mHC/                       # mHC 多头因果架构
 │   ├── mHC.md                 # 📝 mHC 学习笔记
 │   ├── mHC.png                # 🖼️ 架构图
@@ -78,6 +88,30 @@ DeepSeek/
 |------|------|
 | mHC 学习笔记 | ✅ 完成 |
 | 代码实现 | 📋 计划中 |
+
+### 4. ZeRO-Infinity - 异构系统技术 (Engram 鼻祖)
+
+**论文**: [ZeRO-Infinity: Breaking the GPU Memory Wall](https://dl.acm.org/doi/10.1145/3458817.3476205) (Microsoft, SC'21)
+
+| 内容 | 状态 |
+|------|------|
+| 完整学习笔记 | ✅ 完成 |
+| 前置知识详解 | ✅ 完成 |
+| 与 Engram 对比分析 | ✅ 完成 |
+
+**核心贡献**:
+- 带宽中心化切分 (N 卡并行 IO)
+- 无限卸载引擎 (DeepNVMe)
+- 显存中心化分块 (Memory-Centric Tiling)
+- 重叠中心化设计 (三级流水线预取)
+- 训练民主化 (单节点微调万亿模型)
+
+**笔记亮点**:
+- Activation Checkpointing 技术详解
+- 为什么 Transformer 最大算子是 h→4h
+- MSWM 瓶颈的来源与解决
+- 算术强度与效率公式推导
+- ZeRO-Infinity 与 Engram 的技术继承关系
 
 ## 🚀 快速开始
 
