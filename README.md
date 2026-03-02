@@ -15,6 +15,7 @@
 | 模块 | 描述 |
 |------|------|
 | **llm-scratch** | 📚 从零构建大语言模型 (GPT)，包含文本处理、注意力机制、模型实现、预训练、微调全流程 |
+| **nanochat** | ⚡ 极简 LLM 集合，纯 Python 无框架依赖，用最少代码揭示 LLM 核心原理 |
 | **DeepSeek** | 🔬 DeepSeek 系列论文精读与复现，包括 MoE、Engram、mHC 等核心技术解析 |
 | **reasoning-scratch** | 🧠 从零构建推理模型，探索逻辑推理与搜索算法 |
 | **Eng2Fren** | 🌍 基于 Transformer 的英法翻译模型，从训练到部署的完整实践 |
@@ -37,6 +38,9 @@ Zero2Hero-AI/
 │   ├── appendix-A/                 # 分布式训练 (DDP)
 │   ├── appendix-D/                 # 进阶训练技巧
 │   └── appendix-E/                 # LoRA 微调
+│
+├── nanochat/              # ⚡ 极简 LLM 实现（纯 Python）
+│   └── microgpt/                   # 最小化 GPT，含自动微分引擎
 │
 ├── DeepSeek/              # 🔬 DeepSeek 论文精读与复现
 │   ├── DeepSeek-MoE/               # MoE 混合专家模型解析
@@ -85,22 +89,40 @@ pip install -r requirements.txt
 1️⃣ 基础入门
    └── ai_test/Transformer/tutorial.ipynb  # 理解 Transformer 架构
 
-2️⃣ 动手实践
+2️⃣ 极简实现
+   └── nanochat/microgpt/  # 纯 Python，200 行理解 LLM 全貌
+
+3️⃣ 动手实践
    └── Eng2Fren/  # 构建你的第一个翻译模型
 
-3️⃣ 深入原理
+4️⃣ 深入原理
    └── llm-scratch/  # 从零实现 GPT，逐章深入
 
-4️⃣ 前沿探索
+5️⃣ 前沿探索
    └── DeepSeek/  # 精读最新论文，理解 MoE 等前沿技术
 
-5️⃣ 工程应用
+6️⃣ 工程应用
    └── huggingface/  # 学习工业级工具链
 ```
 
 ---
 
 ## 📚 各模块详解
+
+### ⚡ nanochat - 极简 LLM 实现
+
+用最少的代码揭示 LLM 的核心原理，纯 Python 实现，无需 PyTorch/TensorFlow：
+
+- **microgpt.py**: ~200 行实现完整 GPT，含字符级分词、自动微分、Transformer、Adam 优化器
+- **microgpt-detail.py**: 带详细数学推导注释的版本，适合深入理解每个运算
+
+```bash
+# 训练字符级语言模型并生成文本
+cd nanochat/microgpt
+python microgpt.py
+```
+
+---
 
 ### 🔥 llm-scratch - 从零构建大语言模型
 
